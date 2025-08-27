@@ -1,0 +1,17 @@
+{
+  "name": "snax",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "_vndr",
+    "server",
+    "web"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
