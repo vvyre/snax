@@ -2,7 +2,8 @@
   "name": "@snax/server",
   "type": "module",
   "dependencies": {
-    "hono": "^4.9.4"
+    "hono": "^4.9.4",
+    "@snax/vndr": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
