@@ -1,15 +1,12 @@
 import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router'
 import { StartPage } from './page'
-import { RootLayout } from './layout'
 import { Providers } from './providers'
 
 const r = createBrowserRouter([
   {
     element: (
       <Providers>
-        <RootLayout>
-          <Outlet />
-        </RootLayout>
+        <Outlet />
       </Providers>
     ),
     children: [

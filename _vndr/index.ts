@@ -1,1 +1,1 @@
-export const v = 1234
+export * from './utils'
