@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { SWRConfig } from 'swr'
 import { DevTools } from 'jotai-devtools'
 import { GlobalStyle } from 'styles/global'
-
+import 'jotai-devtools/styles.css'
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <>
@@ -11,7 +11,7 @@ export function Providers({ children }: { children: ReactNode }) {
       <SWRConfig value={{}}>
         <OverlayProvider>{children}</OverlayProvider>
       </SWRConfig>
-      <DevTools />
+      <DevTools position="top-right" />
     </>
   )
 }

@@ -1,14 +1,12 @@
 import { css } from '@emotion/react'
-import { ChevronLeft, Menu } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 import { BaseBtn } from './Btn'
 import { useNavigate, useParams } from 'react-router'
-import { RightMenu } from './RightMenu'
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 export function TopBar({ title }: { title: ReactNode }) {
   const { '*': catchAll } = useParams()
   const navigate = useNavigate()
-  const [open, setOpen] = useState<boolean>(false)
 
   return (
     <>
@@ -52,22 +50,8 @@ export function TopBar({ title }: { title: ReactNode }) {
         ) : (
           <span />
         )}
-        <BaseBtn
-          onClick={() => setOpen(!open)}
-          css={css`
-            margin: 0;
-            padding: 0;
-            border: none;
-            z-index: 99;
-            background-color: transparent;
-            color: ${open ? 'white' : 'gray'};
-            width: 1.5rem;
-            height: 1.5rem;
-          `}>
-          <Menu />
-        </BaseBtn>
+        <div />
       </div>
-      <RightMenu open={open} />
     </>
   )
 }

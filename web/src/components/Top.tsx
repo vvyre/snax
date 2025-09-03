@@ -22,6 +22,9 @@ export function Top({
       css={css`
         padding-top: 1rem;
         padding-inline: 1.5rem;
+        @media screen and (min-width: 600px) {
+          margin-left: 3.15rem;
+        }
       `}>
       <TopBar title={title} />
 

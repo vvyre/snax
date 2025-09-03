@@ -22,11 +22,16 @@ export function FixedCTA(props: CTAProps) {
   return (
     <div
       css={css`
+        z-index: 99;
         position: fixed;
         padding-inline: 1.5rem;
         padding-bottom: env(safe-area-inset-bottom);
-        bottom: 1.5rem;
+        bottom: 4rem;
         width: 100%;
+        @media screen and (min-width: 600px) {
+          padding-left: 4.65rem;
+          bottom: 2rem;
+        }
       `}>
       {(() => {
         switch (props.gridType) {

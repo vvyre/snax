@@ -76,10 +76,11 @@ export function BottomSheet({ size, unmount, ...props }: Props) {
   return (
     <div
       css={css`
-        z-index: 999;
+        z-index: 9999;
         position: fixed;
         inset: 0;
         pointer-events: none;
+        display: ${pos === 0 ? 'hidden' : 'block'};
       `}>
       <div
         css={css`
@@ -98,9 +99,9 @@ export function BottomSheet({ size, unmount, ...props }: Props) {
         <div
           ref={sheetRef}
           css={css`
-            z-index: 999999;
-            transform: translateY(${(1 - pos) * 100}%);
-            transition: ${dragging ? 'none' : 'transform 0.15s ease'};
+            transform: translateY(${(1 - pos) * 5}%);
+            opacity: ${pos === 0 ? 0 : 1};
+            transition: ${dragging ? 'none' : 'transform 0.15s ease, opacity 0.1s ease'};
             position: absolute;
             left: 0;
             right: 0;
@@ -115,6 +116,9 @@ export function BottomSheet({ size, unmount, ...props }: Props) {
             display: flex;
             flex-direction: column;
             padding-bottom: env(safe-area-inset-bottom);
+            @media screen and (min-width: 600px) {
+              height: calc(95dvh);
+            }
           `}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
